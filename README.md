@@ -114,19 +114,3 @@ Mayank Rathod
 
 🌟 If you like this project, don’t forget to star the repo!
 
-pgsql
-Copy code
-
----
-
-👉 This version is **clean, professional, and visually attractive** for GitHub. It uses **icons, highlights, and sections** to make the README engaging.  
-
-Would you like me to also **add badges** (like Node.js version, License, Build Status, etc.) at the top to make it look even more professional?
-
-
-
-
-
-
-
-Ask ChatGPT
