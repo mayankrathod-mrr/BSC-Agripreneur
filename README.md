@@ -108,8 +108,7 @@ Frontend → http://localhost:3000
 
 Backend → http://localhost:5000
 
-👤 Author
-Mayank Rathod
+👤 Author - Mayank Rathod
 🔗 GitHub: @mayankrathod-mrr
 
 🌟 If you like this project, don’t forget to star the repo!
