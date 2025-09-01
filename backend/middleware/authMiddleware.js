@@ -1,3 +1,4 @@
+// backend/middleware/authMiddleware.js
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 
@@ -10,7 +11,6 @@ const protect = async (req, res, next) => {
       req.user = await User.findById(decoded.id).select('-password');
       next();
     } catch (error) {
-      console.error(error);
       res.status(401).json({ message: 'Not authorized, token failed' });
     }
   }
@@ -19,4 +19,15 @@ const protect = async (req, res, next) => {
   }
 };
 
-export { protect };
+// === THIS IS THE NEW FUNCTION THAT WAS MISSING ===
+const admin = (req, res, next) => {
+  if (req.user && req.user.role === 'admin') {
+    next();
+  } else {
+    res.status(401).json({ message: 'Not authorized as an admin' });
+  }
+};
+// =============================================
+
+// === AND THIS IS THE UPDATED EXPORT STATEMENT ===
+export { protect, admin };

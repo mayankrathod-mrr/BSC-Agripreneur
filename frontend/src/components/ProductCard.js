@@ -8,12 +8,12 @@ const ProductCard = ({ product }) => {
       <Link href={`/products/${product._id}`}>
           <div className="relative w-full h-48 bg-gray-200">
              <Image 
-               src="/placeholder.png"
-               alt={product.name}
-               fill // The layout="fill" prop becomes just 'fill'
-               className="object-cover" // objectFit is now a Tailwind class
-               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Helps with performance
-/>
+                src={product.beforeImage} // <-- USE THE REAL IMAGE URL
+                alt={product.name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+             />
              {product.offer && product.offer.isOffer && (
                 <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
                     {product.offer.discountPercentage}% OFF

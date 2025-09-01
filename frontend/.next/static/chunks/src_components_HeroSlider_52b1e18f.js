@@ -25,7 +25,9 @@ const HeroSlider = ()=>{
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
-        pauseOnHover: true
+        pauseOnHover: true,
+        accessibility: true,
+        focusOnSelect: true
     };
     const slides = [
         {
@@ -45,54 +47,53 @@ const HeroSlider = ()=>{
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-full mb-16",
+        className: "relative h-96 w-full mb-12",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$slick$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
             ...settings,
-            children: slides.map((slide)=>// This div is crucial: it sets the relative context for the Image component
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "relative h-96 w-full",
+            children: slides.map((slide)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "relative h-80 w-full",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             src: slide.image,
                             alt: slide.text,
                             fill: true,
                             className: "object-cover",
-                            // Added sizes to optimize image loading, adjust if needed
-                            sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                            sizes: "100vw",
+                            priority: slide.id === 1
                         }, void 0, false, {
                             fileName: "[project]/src/components/HeroSlider.js",
-                            lineNumber: 34,
-                            columnNumber: 25
+                            lineNumber: 36,
+                            columnNumber: 26
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center",
+                            className: "absolute inset-0 flex items-center justify-center",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-white text-4xl md:text-5xl font-bold text-center drop-shadow-lg px-4",
+                                className: "text-white text-4xl font-bold text-center drop-shadow-lg",
                                 children: slide.text
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSlider.js",
-                                lineNumber: 44,
+                                lineNumber: 45,
                                 columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/HeroSlider.js",
-                            lineNumber: 43,
+                            lineNumber: 44,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, slide.id, true, {
                     fileName: "[project]/src/components/HeroSlider.js",
-                    lineNumber: 33,
+                    lineNumber: 35,
                     columnNumber: 21
                 }, ("TURBOPACK compile-time value", void 0)))
         }, void 0, false, {
             fileName: "[project]/src/components/HeroSlider.js",
-            lineNumber: 30,
+            lineNumber: 33,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/HeroSlider.js",
-        lineNumber: 29,
+        lineNumber: 32,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };

@@ -254,7 +254,7 @@ function CartPage() {
                         className: "bg-gray-100 p-6 rounded-lg self-start",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-xl font-bold mb-4",
+                                className: "text-xl font-bold mb-4 text-black",
                                 children: "Order Summary"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/cart/page.js",
@@ -262,7 +262,7 @@ function CartPage() {
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex justify-between mb-2",
+                                className: "flex justify-between mb-2 text-black",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "Subtotal"
@@ -288,7 +288,7 @@ function CartPage() {
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex justify-between font-bold text-lg border-t pt-2",
+                                className: "flex justify-between font-bold text-lg border-t pt-2 text-black",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "Total"
@@ -315,7 +315,7 @@ function CartPage() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: handleCheckout,
-                                className: "w-full mt-6 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 font-bold",
+                                className: "w-full mt-6 bg-green-600 text-white py-2 rounded-lg hover:bg-green-500 font-bold",
                                 children: "Proceed to Checkout"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/cart/page.js",

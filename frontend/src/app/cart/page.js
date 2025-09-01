@@ -118,16 +118,16 @@ export default function CartPage() {
                     ))}
                 </div>
                 <div className="bg-gray-100 p-6 rounded-lg self-start">
-                    <h2 className="text-xl font-bold mb-4">Order Summary</h2>
-                    <div className="flex justify-between mb-2">
+                    <h2 className="text-xl font-bold mb-4 text-black">Order Summary</h2>
+                    <div className="flex justify-between mb-2 text-black">
                         <span>Subtotal</span>
                         <span>₹{calculateSubtotal()}</span>
                     </div>
-                    <div className="flex justify-between font-bold text-lg border-t pt-2">
+                    <div className="flex justify-between font-bold text-lg border-t pt-2 text-black">
                         <span>Total</span>
                         <span>₹{calculateSubtotal()}</span>
                     </div>
-                    <button onClick={handleCheckout} className="w-full mt-6 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 font-bold">
+                    <button onClick={handleCheckout} className="w-full mt-6 bg-green-600 text-white py-2 rounded-lg hover:bg-green-500 font-bold">
                         Proceed to Checkout
                     </button>
                 </div>
