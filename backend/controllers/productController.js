@@ -6,23 +6,31 @@ const getProducts = async (req, res) => {
     const products = await Product.find({});
     res.json(products);
   } catch (error) {
+    console.error('Backend Error in getProducts:', error);
     res.status(500).json({ message: 'Server Error' });
   }
 };
 
 const getProductById = async (req, res) => {
-    // ... function is unchanged
+  try {
+    const product = await Product.findById(req.params.id);
+    if (product) {
+      res.json(product);
+    } else {
+      res.status(404).json({ message: 'Product not found' });
+    }
+  } catch (error) {
+    console.error('Backend Error in getProductById:', error);
+    res.status(500).json({ message: 'Server Error' });
+  }
 };
 
 const createProduct = async (req, res) => {
   try {
     const { name, category, description, quantity, price } = req.body;
-    
-    // Default image paths
     let beforeImageUrl = '/placeholder.png'; 
     let afterImageUrl = '/placeholder.png';
 
-    // Check if files were uploaded and assign their paths
     if (req.files) {
       if (req.files.beforeImage) {
         beforeImageUrl = req.files.beforeImage[0].path;
@@ -33,11 +41,7 @@ const createProduct = async (req, res) => {
     }
     
     const product = new Product({
-      name,
-      category,
-      description,
-      quantity,
-      price,
+      name, category, description, quantity, price,
       beforeImage: beforeImageUrl,
       afterImage: afterImageUrl,
       uploadedBy: req.user._id, 
@@ -46,17 +50,17 @@ const createProduct = async (req, res) => {
     const createdProduct = await product.save();
     res.status(201).json(createdProduct);
   } catch (error) {
-    console.error(error); // This will log the detailed error to your backend terminal
+    console.error(error);
     res.status(500).json({ message: 'Server Error' });
   }
 };
 
 const updateProduct = async (req, res) => {
-    // ... function is unchanged
+    // your updateProduct function
 };
 
 const deleteProduct = async (req, res) => {
-    // ... function is unchanged
+    // your deleteProduct function
 };
 
 export {

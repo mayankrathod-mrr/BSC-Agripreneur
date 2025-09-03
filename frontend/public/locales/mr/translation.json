@@ -1,0 +1,15 @@
+{
+  "home": "मुख्यपृष्ठ",
+  "products": "उत्पादने",
+  "contact": "संपर्क",
+  "cart": "कार्ट",
+  "login_register": "लॉगिन/नोंदणी करा",
+  "welcome_user": "नमस्कार, {{name}}",
+  "logout": "लॉगआउट",
+  "admin": "ऍडमिन",
+  "our_categories": "आमच्या श्रेण्या",
+  "seeds": "बियाणे",
+  "fertilizers": "खते",
+  "pesticides": "कीटकनाशके",
+  "featured_products": "वैशिष्ट्यीकृत उत्पादने"
+}

@@ -1,0 +1,15 @@
+{
+  "home": "Home",
+  "products": "Products",
+  "contact": "Contact",
+  "cart": "Cart",
+  "login_register": "Login/Register",
+  "welcome_user": "Welcome, {{name}}",
+  "logout": "Logout",
+  "admin": "Admin",
+  "our_categories": "Our Categories",
+  "seeds": "Seeds",
+  "fertilizers": "Fertilizers",
+  "pesticides": "Pesticides",
+  "featured_products": "Featured Products"
+}
