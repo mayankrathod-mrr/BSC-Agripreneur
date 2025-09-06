@@ -39,22 +39,23 @@ export default function ProductActions({ product }) {
     <button
       onClick={handleAddToCart}
       disabled={product.quantity === 0 || loading}
-      className={`w-full flex items-center justify-center gap-2 font-semibold py-3 px-4 rounded-lg transition-all duration-300 
+      className={`w-full flex items-center justify-center gap-2 font-semibold py-3 px-5 rounded-xl 
+        transition-all duration-300 shadow-md
         ${
           product.quantity > 0 && !loading
-            ? "bg-green-600 hover:bg-green-700 active:scale-95 text-white"
-            : "bg-gray-300 cursor-not-allowed text-gray-600"
+            ? "bg-gradient-to-r from-green-600 to-emerald-500 text-white hover:from-green-700 hover:to-emerald-600 active:scale-95"
+            : "bg-gray-200 cursor-not-allowed text-gray-500"
         }`}
     >
       {loading ? (
         <>
           <ImSpinner2 className="animate-spin" size={20} />
-          Adding...
+          <span>Adding...</span>
         </>
       ) : product.quantity > 0 ? (
         <>
           <FaShoppingCart size={18} />
-          Add to Cart
+          <span>Add to Cart</span>
         </>
       ) : (
         "Out of Stock"

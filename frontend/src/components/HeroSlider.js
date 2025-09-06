@@ -27,16 +27,16 @@ const HeroSlider = () => {
   ];
 
   return (
-    <div className="relative h-[28rem] w-full mb-12">
+    <div className="relative w-screen h-[28rem] mb-12 overflow-hidden">
       <Slider {...settings}>
         {slides.map((slide) => (
-          <div key={slide.id} className="relative h-[28rem] w-full">
+          <div key={slide.id} className="relative w-screen h-[28rem]">
             <Image
               src={slide.image}
               alt={slide.text}
               fill
               className="object-cover"
-              sizes="150vw"
+              sizes="100vw"
               priority={slide.id === 1}
             />
             {/* Overlay */}
@@ -53,6 +53,9 @@ const HeroSlider = () => {
 
       {/* Custom Dots */}
       <style jsx global>{`
+        .slick-dots {
+          bottom: 15px;
+        }
         .slick-dots li button:before {
           font-size: 12px;
           color: white;

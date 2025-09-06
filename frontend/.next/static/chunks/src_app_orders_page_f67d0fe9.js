@@ -28,12 +28,12 @@ function OrdersPage() {
                 "OrdersPage.useEffect.fetchOrders": async ()=>{
                     if (!user) return;
                     try {
-                        const res = await fetch('http://localhost:5000/api/orders/myorders', {
+                        const res = await fetch("http://localhost:5000/api/orders/myorders", {
                             headers: {
-                                'Authorization': "Bearer ".concat(user.token)
+                                Authorization: "Bearer ".concat(user.token)
                             }
                         });
-                        if (!res.ok) throw new Error('Failed to fetch orders');
+                        if (!res.ok) throw new Error("Failed to fetch orders");
                         const data = await res.json();
                         setOrders(data);
                     } catch (error) {
@@ -49,175 +49,203 @@ function OrdersPage() {
         user
     ]);
     if (loading) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-        className: "text-center py-12",
+        className: "text-center py-12 text-gray-600 animate-pulse",
         children: "Loading your orders..."
     }, void 0, false, {
         fileName: "[project]/src/app/orders/page.js",
-        lineNumber: 32,
-        columnNumber: 25
+        lineNumber: 34,
+        columnNumber: 7
     }, this);
     if (!user) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
         className: "text-center py-12",
         children: [
-            "Please ",
+            "Please",
+            " ",
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 href: "/login",
-                className: "text-green-600 underline",
+                className: "text-green-600 underline font-semibold",
                 children: "log in"
             }, void 0, false, {
                 fileName: "[project]/src/app/orders/page.js",
-                lineNumber: 33,
-                columnNumber: 63
+                lineNumber: 43,
+                columnNumber: 9
             }, this),
-            " to see your orders."
+            " ",
+            "to see your orders."
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/orders/page.js",
-        lineNumber: 33,
-        columnNumber: 23
+        lineNumber: 41,
+        columnNumber: 7
     }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "container mx-auto py-12",
+        className: "container mx-auto py-12 px-4",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                className: "text-3xl font-bold mb-8",
+                className: "text-3xl font-bold mb-8 text-green-700 text-center",
                 children: "Your Order History"
             }, void 0, false, {
                 fileName: "[project]/src/app/orders/page.js",
-                lineNumber: 37,
-                columnNumber: 13
+                lineNumber: 52,
+                columnNumber: 7
             }, this),
             orders.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                children: "You have no past orders."
+                className: "text-center text-gray-500 text-lg",
+                children: "You don’t have any past orders yet."
             }, void 0, false, {
                 fileName: "[project]/src/app/orders/page.js",
-                lineNumber: 39,
-                columnNumber: 17
+                lineNumber: 57,
+                columnNumber: 9
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "space-y-6",
+                className: "space-y-8",
                 children: orders.map((order)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "border rounded-lg p-6",
+                        className: "border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition p-6 bg-white",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex justify-between items-center mb-4",
+                                className: "flex flex-col md:flex-row md:justify-between md:items-center mb-4",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "font-bold",
+                                                className: "text-sm text-gray-500",
                                                 children: [
-                                                    "Order ID: ",
-                                                    order._id
+                                                    "Order ID:",
+                                                    " ",
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-gray-800 font-medium",
+                                                        children: order._id
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/orders/page.js",
+                                                        lineNumber: 72,
+                                                        columnNumber: 21
+                                                    }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/orders/page.js",
-                                                lineNumber: 46,
-                                                columnNumber: 37
+                                                lineNumber: 70,
+                                                columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm text-gray-500",
+                                                className: "text-sm text-gray-400",
                                                 children: [
-                                                    "Date: ",
+                                                    "Placed on ",
                                                     new Date(order.createdAt).toLocaleDateString()
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/orders/page.js",
-                                                lineNumber: 47,
-                                                columnNumber: 37
+                                                lineNumber: 76,
+                                                columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/orders/page.js",
-                                        lineNumber: 45,
-                                        columnNumber: 33
+                                        lineNumber: 69,
+                                        columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "text-right",
+                                        className: "mt-3 md:mt-0 text-right",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "font-bold",
+                                                className: "font-bold text-lg text-green-700",
                                                 children: [
-                                                    "Total: ₹",
+                                                    "₹",
                                                     order.totalPrice.toFixed(2)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/orders/page.js",
-                                                lineNumber: 50,
-                                                columnNumber: 37
+                                                lineNumber: 81,
+                                                columnNumber: 19
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm font-semibold ".concat(order.status === 'Delivered' ? 'text-green-600' : 'text-yellow-600'),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "mt-1 inline-block px-3 py-1 text-xs font-semibold rounded-full ".concat(order.status === "Delivered" ? "bg-green-100 text-green-700" : order.status === "Cancelled" ? "bg-red-100 text-red-600" : "bg-yellow-100 text-yellow-700"),
                                                 children: order.status
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/orders/page.js",
-                                                lineNumber: 51,
-                                                columnNumber: 37
+                                                lineNumber: 84,
+                                                columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/orders/page.js",
-                                        lineNumber: 49,
-                                        columnNumber: 33
+                                        lineNumber: 80,
+                                        columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/orders/page.js",
-                                lineNumber: 44,
-                                columnNumber: 29
+                                lineNumber: 68,
+                                columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "divide-y divide-gray-200",
                                 children: order.orderItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex justify-between items-center py-2 border-t",
+                                        className: "flex justify-between items-center py-3",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 children: [
-                                                    item.name,
-                                                    " (x",
-                                                    item.quantity,
-                                                    ")"
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-gray-800 font-medium",
+                                                        children: item.name
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/orders/page.js",
+                                                        lineNumber: 106,
+                                                        columnNumber: 23
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-sm text-gray-500",
+                                                        children: [
+                                                            "Qty: ",
+                                                            item.quantity
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/app/orders/page.js",
+                                                        lineNumber: 107,
+                                                        columnNumber: 23
+                                                    }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/orders/page.js",
-                                                lineNumber: 57,
-                                                columnNumber: 41
+                                                lineNumber: 105,
+                                                columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "font-semibold text-gray-700",
                                                 children: [
                                                     "₹",
                                                     (item.price * item.quantity).toFixed(2)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/orders/page.js",
-                                                lineNumber: 58,
-                                                columnNumber: 41
+                                                lineNumber: 111,
+                                                columnNumber: 21
                                             }, this)
                                         ]
                                     }, item.product, true, {
                                         fileName: "[project]/src/app/orders/page.js",
-                                        lineNumber: 56,
-                                        columnNumber: 37
+                                        lineNumber: 101,
+                                        columnNumber: 19
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/orders/page.js",
-                                lineNumber: 54,
-                                columnNumber: 29
+                                lineNumber: 99,
+                                columnNumber: 15
                             }, this)
                         ]
                     }, order._id, true, {
                         fileName: "[project]/src/app/orders/page.js",
-                        lineNumber: 43,
-                        columnNumber: 25
+                        lineNumber: 63,
+                        columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/orders/page.js",
-                lineNumber: 41,
-                columnNumber: 17
+                lineNumber: 61,
+                columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/orders/page.js",
-        lineNumber: 36,
-        columnNumber: 9
+        lineNumber: 51,
+        columnNumber: 5
     }, this);
 }
 _s(OrdersPage, "1p83rY/Dz/B5wMe0PkufYC84Mag=", false, function() {

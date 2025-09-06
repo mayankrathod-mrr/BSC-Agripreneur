@@ -1,40 +1,36 @@
-// frontend/src/components/ProductCard.js
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 const ProductCard = ({ product }) => {
   return (
     <Link
       href={`/products/${product._id}`}
-      className="block border border-green-100 rounded-xl shadow-md overflow-hidden 
-                 transition-transform duration-300 hover:scale-105 hover:shadow-xl 
-                 bg-white group"
+      className="group block rounded-xl border border-gray-200 shadow-md overflow-hidden bg-white transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
     >
-      {/* Image Section */}
-      <div className="relative w-full h-48 bg-green-50">
+      {/* Image */}
+      <div className="relative w-full h-52 bg-gray-100">
         <Image
-          src={product.beforeImage}
+          src={product.mainImage}
           alt={product.name}
           fill
-          className="object-cover group-hover:opacity-90 transition-opacity duration-300"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-
-        {product.offer && product.offer.isOffer && (
-          <span className="absolute top-2 left-2 bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded shadow">
-            {product.offer.discountPercentage}% OFF
-          </span>
-        )}
       </div>
 
-      {/* Content Section */}
-      <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-800 truncate group-hover:text-green-800">
+      {/* Content */}
+      <div className="p-4 space-y-2">
+        <h3 className="text-lg font-bold text-gray-900 line-clamp-1">
           {product.name}
         </h3>
-        <p className="text-sm text-green-600 capitalize">{product.category}</p>
-        <div className="mt-2 flex items-center justify-between">
-          <p className="text-xl font-bold text-green-700">₹{product.price}</p>
+        <span className="inline-block text-xs font-medium bg-green-100 text-green-800 px-2 py-1 rounded capitalize">
+          {product.category}
+        </span>
+
+        <div className="flex items-center justify-between mt-2">
+          <p className="text-2xl font-extrabold text-green-700">
+            ₹{product.price}
+          </p>
         </div>
       </div>
     </Link>

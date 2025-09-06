@@ -12,22 +12,16 @@ const productSchema = mongoose.Schema(
     description: { type: String, required: true },
     quantity: { type: Number, required: true, default: 0 },
     price: { type: Number, required: true, default: 0 },
-    offer: {
-      isOffer: { type: Boolean, default: false },
-      discountPercentage: { type: Number, default: 0 },
-    },
-    // --- CHANGES ARE HERE ---
-    beforeImage: { 
+    // Main image is now strictly required
+    mainImage: { 
       type: String, 
-      required: false, // No longer required
-      default: '/placeholder.png' // Default image if none is provided
+      required: true,
     },
+    // Result image is completely optional with no default value
     afterImage: { 
       type: String, 
-      required: false, // No longer required
-      default: '/placeholder.png' // Default image if none is provided
+      required: false,
     },
-    // -------------------------
     uploadedBy: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,

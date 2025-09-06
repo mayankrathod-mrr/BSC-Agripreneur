@@ -22,7 +22,7 @@ const addOrderItems = async (req, res) => {
       orderItems: cart.products.map(item => ({
         name: item.product.name,
         quantity: item.quantity,
-        image: item.product.beforeImage,
+        image: item.product.mainImage,
         price: item.product.price,
         product: item.product._id,
       })),

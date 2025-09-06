@@ -48,19 +48,19 @@ const HeroSlider = ()=>{
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "jsx-e420799d04505a70" + " " + "relative h-[28rem] w-full mb-12",
+        className: "jsx-42c0b86e76b1ddaa" + " " + "relative w-screen h-[28rem] mb-12 overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$slick$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 ...settings,
                 children: slides.map((slide)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-e420799d04505a70" + " " + "relative h-[28rem] w-full",
+                        className: "jsx-42c0b86e76b1ddaa" + " " + "relative w-screen h-[28rem]",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 src: slide.image,
                                 alt: slide.text,
                                 fill: true,
                                 className: "object-cover",
-                                sizes: "150vw",
+                                sizes: "100vw",
                                 priority: slide.id === 1
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSlider.js",
@@ -68,16 +68,16 @@ const HeroSlider = ()=>{
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "jsx-e420799d04505a70" + " " + "absolute inset-0 bg-gradient-to-b from-green-900/50 to-black/40"
+                                className: "jsx-42c0b86e76b1ddaa" + " " + "absolute inset-0 bg-gradient-to-b from-green-900/50 to-black/40"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSlider.js",
                                 lineNumber: 43,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "jsx-e420799d04505a70" + " " + "absolute inset-0 flex items-center justify-center px-4",
+                                className: "jsx-42c0b86e76b1ddaa" + " " + "absolute inset-0 flex items-center justify-center px-4",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                    className: "jsx-e420799d04505a70" + " " + "text-white text-2xl md:text-4xl lg:text-5xl font-bold text-center drop-shadow-lg leading-snug",
+                                    className: "jsx-42c0b86e76b1ddaa" + " " + "text-white text-2xl md:text-4xl lg:text-5xl font-bold text-center drop-shadow-lg leading-snug",
                                     children: slide.text
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/HeroSlider.js",
@@ -101,8 +101,8 @@ const HeroSlider = ()=>{
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "e420799d04505a70",
-                children: ".slick-dots li button:before{color:#fff;opacity:.6;font-size:12px}.slick-dots li.slick-active button:before{color:#16a34a;opacity:1}"
+                id: "42c0b86e76b1ddaa",
+                children: ".slick-dots{bottom:15px}.slick-dots li button:before{color:#fff;opacity:.6;font-size:12px}.slick-dots li.slick-active button:before{color:#16a34a;opacity:1}"
             }, void 0, false, void 0, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {

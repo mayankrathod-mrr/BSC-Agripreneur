@@ -19,39 +19,52 @@ export default async function HomePage() {
   const featuredProducts = allProducts.slice(0, 4);
 
   return (
-    <div className="bg-white">
-      {/* Hero Slider Section - It stays full-width */}
+    <div>
+      {/* Full-width Hero Slider */}
       <HeroSlider />
 
-      <div className="container mx-auto px-4">
+      {/* Content Sections */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Categories Section */}
-        <section className="text-center mb-16"> {/* Increased bottom margin */}
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">Our Categories</h2> {/* Added dark text and more margin */}
+        <section className="text-center my-20">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-orang-800 mb-10">
+            🌿 Shop by Category
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Added text-gray-800 to make the text visible */}
-            <Link href="/products?category=seeds" className="bg-gray-100 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-gray-800">
-              <h3 className="text-2xl font-semibold">Seeds</h3>
-            </Link>
-            <Link href="/products?category=fertilizers" className="bg-gray-100 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-gray-800">
-              <h3 className="text-2xl font-semibold">Fertilizers</h3>
-            </Link>
-            <Link href="/products?category=pesticides" className="bg-gray-100 p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-gray-800">
-              <h3 className="text-2xl font-semibold">Pesticides</h3>
-            </Link>
+            {[
+              { name: "Seeds", link: "/products?category=seeds" },
+              { name: "Fertilizers", link: "/products?category=fertilizers" },
+              { name: "Pesticides", link: "/products?category=pesticides" },
+            ].map((cat) => (
+              <Link
+                key={cat.name}
+                href={cat.link}
+                className="bg-green-50 p-10 rounded-xl shadow-sm hover:shadow-lg 
+                           hover:-translate-y-1 transition-all duration-300 
+                           border border-green-100"
+              >
+                <h3 className="text-2xl font-semibold text-green-700">{cat.name}</h3>
+              </Link>
+            ))}
           </div>
         </section>
 
         {/* Featured Products Section */}
-        <section className="mb-16"> {/* Increased bottom margin */}
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Featured Products</h2> {/* Added dark text and more margin */}
+        <section className="mb-20">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-orang-800 mb-10">
+             Featured Products
+          </h2>
           {featuredProducts.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {featuredProducts.map(product => (
+              {featuredProducts.map((product) => (
                 <ProductCard key={product._id} product={product} />
               ))}
             </div>
           ) : (
-            <p className="text-center text-gray-600">No featured products available at the moment.</p>
+            <p className="text-center text-gray-600 text-lg">
+              No featured products available at the moment.
+            </p>
           )}
         </section>
       </div>

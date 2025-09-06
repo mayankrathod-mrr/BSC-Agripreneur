@@ -54,7 +54,7 @@ function ProductActions(param) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
         onClick: handleAddToCart,
         disabled: product.quantity === 0 || loading,
-        className: "w-full flex items-center justify-center gap-2 font-semibold py-3 px-4 rounded-lg transition-all duration-300 \n        ".concat(product.quantity > 0 && !loading ? "bg-green-600 hover:bg-green-700 active:scale-95 text-white" : "bg-gray-300 cursor-not-allowed text-gray-600"),
+        className: "w-full flex items-center justify-center gap-2 font-semibold py-3 px-5 rounded-xl \n        transition-all duration-300 shadow-md\n        ".concat(product.quantity > 0 && !loading ? "bg-gradient-to-r from-green-600 to-emerald-500 text-white hover:from-green-700 hover:to-emerald-600 active:scale-95" : "bg-gray-200 cursor-not-allowed text-gray-500"),
         children: loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$im$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ImSpinner2"], {
@@ -62,10 +62,16 @@ function ProductActions(param) {
                     size: 20
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProductActions.js",
-                    lineNumber: 51,
+                    lineNumber: 52,
                     columnNumber: 11
                 }, this),
-                "Adding..."
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    children: "Adding..."
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ProductActions.js",
+                    lineNumber: 53,
+                    columnNumber: 11
+                }, this)
             ]
         }, void 0, true) : product.quantity > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
             children: [
@@ -73,10 +79,16 @@ function ProductActions(param) {
                     size: 18
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProductActions.js",
-                    lineNumber: 56,
+                    lineNumber: 57,
                     columnNumber: 11
                 }, this),
-                "Add to Cart"
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    children: "Add to Cart"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ProductActions.js",
+                    lineNumber: 58,
+                    columnNumber: 11
+                }, this)
             ]
         }, void 0, true) : "Out of Stock"
     }, void 0, false, {

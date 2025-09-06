@@ -49,28 +49,24 @@ __turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$c
 "[project]/src/app/products/[id]/page.js [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-// frontend/src/app/products/[id]/page.js
 __turbopack_context__.s([
     "default",
     ()=>ProductDetailPage
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-rsc] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ProductActions$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ProductActions.js [app-rsc] (ecmascript)"); // <-- The button component
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ProductActions$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ProductActions.js [app-rsc] (ecmascript)");
 ;
 ;
 ;
-// This is a Server Component that fetches data
 async function getProductDetails(id) {
     try {
-        // It fetches directly from the backend
-        const res = await fetch(`http://localhost:5000/api/products/${id}`, {
-            cache: 'no-store'
+        const res = await fetch(`http://127.0.0.1:5000/api/products/${id}`, {
+            cache: "no-store"
         });
         if (!res.ok) return null;
         return res.json();
     } catch (error) {
-        console.error("Error fetching on server:", error);
         return null;
     }
 }
@@ -79,196 +75,212 @@ async function ProductDetailPage({ params }) {
     const product = await getProductDetails(id);
     if (!product) {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "text-center py-24 text-xl font-semibold",
-            children: "Product not found."
+            className: "text-center py-24 text-xl font-semibold text-gray-700",
+            children: "❌ Product not found."
         }, void 0, false, {
             fileName: "[project]/src/app/products/[id]/page.js",
-            lineNumber: 25,
-            columnNumber: 16
+            lineNumber: 22,
+            columnNumber: 7
         }, this);
     }
-    // The page renders instantly with the data. No loading state needed.
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "container mx-auto py-12 px-4",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "grid grid-cols-1 md:grid-cols-2 gap-8",
+            className: "grid grid-cols-1 md:grid-cols-2 gap-10",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "text-2xl font-bold mb-4 text-center",
+                            className: "text-2xl font-bold mb-6 text-center text-gray-800",
                             children: "Product Showcase"
                         }, void 0, false, {
                             fileName: "[project]/src/app/products/[id]/page.js",
                             lineNumber: 33,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-col sm:flex-row gap-4",
+                            className: "flex flex-col sm:flex-row gap-6",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex-1 text-center",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-lg font-semibold mb-2",
+                                            className: "text-lg font-semibold mb-3 text-gray-700",
                                             children: "Main Image"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/products/[id]/page.js",
-                                            lineNumber: 36,
-                                            columnNumber: 29
+                                            lineNumber: 39,
+                                            columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "relative w-full h-80 border rounded-lg overflow-hidden",
+                                            className: "relative w-full h-80 border rounded-xl overflow-hidden shadow-md",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                                src: product.beforeImage,
+                                                src: product.mainImage,
                                                 alt: product.name,
                                                 fill: true,
-                                                className: "object-cover",
+                                                className: "object-cover hover:scale-105 transition-transform duration-300",
                                                 sizes: "50vw",
                                                 priority: true
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/products/[id]/page.js",
-                                                lineNumber: 38,
-                                                columnNumber: 33
+                                                lineNumber: 43,
+                                                columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/products/[id]/page.js",
-                                            lineNumber: 37,
-                                            columnNumber: 29
+                                            lineNumber: 42,
+                                            columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/products/[id]/page.js",
-                                    lineNumber: 35,
-                                    columnNumber: 25
+                                    lineNumber: 38,
+                                    columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                product.afterImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex-1 text-center",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-lg font-semibold mb-2",
+                                            className: "text-lg font-semibold mb-3 text-gray-700",
                                             children: "Result Image"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/products/[id]/page.js",
-                                            lineNumber: 42,
-                                            columnNumber: 29
+                                            lineNumber: 57,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "relative w-full h-80 border rounded-lg overflow-hidden",
+                                            className: "relative w-full h-80 border rounded-xl overflow-hidden shadow-md",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                                 src: product.afterImage,
                                                 alt: "Result of product usage",
                                                 fill: true,
-                                                className: "object-cover",
+                                                className: "object-cover hover:scale-105 transition-transform duration-300",
                                                 sizes: "50vw"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/products/[id]/page.js",
-                                                lineNumber: 44,
-                                                columnNumber: 33
+                                                lineNumber: 61,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/products/[id]/page.js",
-                                            lineNumber: 43,
-                                            columnNumber: 29
+                                            lineNumber: 60,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/products/[id]/page.js",
-                                    lineNumber: 41,
-                                    columnNumber: 25
+                                    lineNumber: 56,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/products/[id]/page.js",
-                            lineNumber: 34,
-                            columnNumber: 21
+                            lineNumber: 36,
+                            columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/products/[id]/page.js",
                     lineNumber: 32,
-                    columnNumber: 17
+                    columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "space-y-4",
+                    className: "space-y-5",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-4xl font-bold",
+                            className: "text-4xl font-bold text-gray-900",
                             children: product.name
                         }, void 0, false, {
                             fileName: "[project]/src/app/products/[id]/page.js",
-                            lineNumber: 50,
-                            columnNumber: 21
+                            lineNumber: 76,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "text-sm bg-green-200 text-green-800 px-2 py-1 rounded capitalize",
+                            className: "inline-block text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full capitalize shadow-sm",
                             children: product.category
                         }, void 0, false, {
                             fileName: "[project]/src/app/products/[id]/page.js",
-                            lineNumber: 51,
-                            columnNumber: 21
+                            lineNumber: 78,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-gray-600 text-lg",
+                            className: "text-gray-600 text-lg leading-relaxed",
                             children: product.description
                         }, void 0, false, {
                             fileName: "[project]/src/app/products/[id]/page.js",
-                            lineNumber: 52,
-                            columnNumber: 21
+                            lineNumber: 82,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-3xl font-bold text-green-700",
+                            className: "text-3xl font-extrabold text-green-700",
                             children: [
                                 "₹",
                                 product.price
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/products/[id]/page.js",
-                            lineNumber: 53,
-                            columnNumber: 21
+                            lineNumber: 86,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-md",
+                            className: "text-md text-gray-700",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "font-semibold",
                                     children: "Stock:"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/products/[id]/page.js",
-                                    lineNumber: 54,
-                                    columnNumber: 44
+                                    lineNumber: 91,
+                                    columnNumber: 13
                                 }, this),
                                 " ",
-                                product.quantity > 0 ? `${product.quantity} units available` : 'Out of Stock'
+                                product.quantity > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-green-600 font-medium",
+                                    children: [
+                                        product.quantity,
+                                        " units available"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/app/products/[id]/page.js",
+                                    lineNumber: 93,
+                                    columnNumber: 15
+                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-red-600 font-medium",
+                                    children: "Out of Stock"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/products/[id]/page.js",
+                                    lineNumber: 97,
+                                    columnNumber: 15
+                                }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/products/[id]/page.js",
-                            lineNumber: 54,
-                            columnNumber: 21
+                            lineNumber: 90,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ProductActions$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                             product: product
                         }, void 0, false, {
                             fileName: "[project]/src/app/products/[id]/page.js",
-                            lineNumber: 57,
-                            columnNumber: 21
+                            lineNumber: 102,
+                            columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/products/[id]/page.js",
-                    lineNumber: 49,
-                    columnNumber: 17
+                    lineNumber: 75,
+                    columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/products/[id]/page.js",
-            lineNumber: 31,
-            columnNumber: 13
+            lineNumber: 30,
+            columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/products/[id]/page.js",
-        lineNumber: 30,
-        columnNumber: 9
+        lineNumber: 29,
+        columnNumber: 5
     }, this);
 }
 }),

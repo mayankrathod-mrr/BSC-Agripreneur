@@ -11,20 +11,20 @@ import {
 import { protect, admin } from '../middleware/authMiddleware.js';
 import upload from '../config/cloudinary.js';
 
-// This is the middleware that will process the files from the form
+// This middleware will process up to two file fields from our form
 const cpUpload = upload.fields([
-    { name: 'beforeImage', maxCount: 1 },
+    { name: 'mainImage', maxCount: 1 },
     { name: 'afterImage', maxCount: 1 }
 ]);
 
-// We add 'admin' and 'cpUpload' middleware to the POST route.
-// The order is important: first check if user is admin, then process files.
+// The POST route uses cpUpload to create products with images
 router.route('/').get(getProducts).post(protect, admin, cpUpload, createProduct);
 
+// The PUT route now ALSO uses cpUpload to handle updating images
 router
   .route('/:id')
   .get(getProductById)
-  .put(protect, admin, updateProduct)
+  .put(protect, admin, cpUpload, updateProduct) // <-- ADDED cpUpload HERE
   .delete(protect, admin, deleteProduct);
 
 export default router;
