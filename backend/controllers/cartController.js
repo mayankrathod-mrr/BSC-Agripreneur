@@ -1,11 +1,7 @@
-// backend/controllers/cartController.js
 import Cart from '../models/Cart.js';
 
 // @desc    Add item to cart or update quantity
-// @route   POST /api/cart/add
-// @access  Private
 const addToCart = async (req, res) => {
-    // ... this function stays the same
     const { productId, quantity } = req.body;
     const userId = req.user._id;
     try {
@@ -32,14 +28,18 @@ const addToCart = async (req, res) => {
 // @access  Private
 const getCart = async (req, res) => {
     try {
+        // === THIS IS THE FIX ===
+        // We are now populating 'mainImage' instead of the old 'beforeImage'
         const cart = await Cart.findOne({ user: req.user._id }).populate(
             'products.product',
-            'name price beforeImage' // Select which fields from the Product model to include
+            'name price mainImage' 
         );
+        // ======================
 
         if (cart) {
             res.json(cart);
         } else {
+            // This is normal if the user has an empty cart
             res.status(404).json({ message: 'Cart not found' });
         }
     } catch (error) {
@@ -48,8 +48,6 @@ const getCart = async (req, res) => {
 };
 
 // @desc    Remove item from cart
-// @route   DELETE /api/cart/remove/:productId
-// @access  Private
 const removeFromCart = async (req, res) => {
     const { productId } = req.params;
     const userId = req.user._id;
@@ -58,7 +56,6 @@ const removeFromCart = async (req, res) => {
         const cart = await Cart.findOne({ user: userId });
 
         if (cart) {
-            // Filter out the product to be removed
             cart.products = cart.products.filter(
                 p => p.product.toString() !== productId
             );

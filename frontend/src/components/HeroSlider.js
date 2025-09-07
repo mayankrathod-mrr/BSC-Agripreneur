@@ -27,7 +27,7 @@ const HeroSlider = () => {
   ];
 
   return (
-    <div className="relative w-screen h-[28rem] mb-12 overflow-hidden">
+    <div className="relative w-screen h-[28rem] mb-12 overflow-hidden mt-3">
       <Slider {...settings}>
         {slides.map((slide) => (
           <div key={slide.id} className="relative w-screen h-[28rem]">
