@@ -22,7 +22,7 @@ const HeroSlider = () => {
 
   const slides = [
     { id: 1, image: "/slide1.jpg", text: "🌱 Quality Seeds for a Bountiful Harvest" },
-    { id: 2, image: "/slide2.jpg", text: "🌾 Advanced Fertilizers for Healthy Growth" },
+    { id: 2, image: "/slide2.jpg", text: "🌾 Advanced Pesticides for Healthy Growth" },
     { id: 3, image: "/slide3.jpg", text: "🛡 Effective Solutions for Pest Control" },
   ];
 

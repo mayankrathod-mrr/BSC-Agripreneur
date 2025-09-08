@@ -101,7 +101,6 @@ const __TURBOPACK__default__export__ = ProductCard;
 "[project]/src/app/products/page.js [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-// frontend/src/app/products/page.js
 __turbopack_context__.s([
     "default",
     ()=>ProductsPage
@@ -110,76 +109,64 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ProductCard$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ProductCard.js [app-rsc] (ecmascript)");
 ;
 ;
-// Fetch products from backend
-async function getProducts() {
+// This function fetches products based on a category
+async function getProducts(category) {
     try {
-        const res = await fetch("http://127.0.0.1:5000/api/products", {
-            cache: "no-store"
+        // If a category is provided, add it to the API URL as a query parameter
+        const url = category ? `http://localhost:5000/api/products?category=${category}` : 'http://localhost:5000/api/products';
+        const res = await fetch(url, {
+            cache: 'no-store'
         });
         if (!res.ok) return [];
         return res.json();
     } catch (error) {
-        console.error("Error fetching products:", error);
+        console.error('Error fetching products:', error);
         return [];
     }
 }
-async function ProductsPage() {
-    const products = await getProducts();
+async function ProductsPage({ searchParams }) {
+    // === THIS IS THE FINAL, GUARANTEED FIX ===
+    // In new Next.js, you must 'await' the searchParams before using them.
+    const awaitedParams = await searchParams;
+    const category = awaitedParams.category || '';
+    // ==========================================
+    const products = await getProducts(category);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "container mx-auto px-4 sm:px-6 lg:px-8 py-12",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                className: "text-4xl font-extrabold text-center mb-10  text-white drop-shadow-lg",
-                children: "🌱 Our Products"
+                className: "text-3xl font-bold text-center mb-8 capitalize",
+                children: category ? `${category}` : 'All Products'
             }, void 0, false, {
                 fileName: "[project]/src/app/products/page.js",
-                lineNumber: 25,
+                lineNumber: 35,
                 columnNumber: 7
             }, this),
-            products.length === 0 ? // Empty state
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "text-center py-20 text-gray-600",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-lg",
-                        children: "No products available at the moment."
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/products/page.js",
-                        lineNumber: 35,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-sm mt-2",
-                        children: "Please check back later!"
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/products/page.js",
-                        lineNumber: 36,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
+            products.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "text-center text-gray-500",
+                children: "No products found for this category."
+            }, void 0, false, {
                 fileName: "[project]/src/app/products/page.js",
-                lineNumber: 34,
+                lineNumber: 41,
                 columnNumber: 9
-            }, this) : // Product Grid
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10",
+            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8",
                 children: products.map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ProductCard$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                         product: product
                     }, product._id, false, {
                         fileName: "[project]/src/app/products/page.js",
-                        lineNumber: 42,
+                        lineNumber: 45,
                         columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/products/page.js",
-                lineNumber: 40,
+                lineNumber: 43,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/products/page.js",
-        lineNumber: 23,
+        lineNumber: 34,
         columnNumber: 5
     }, this);
 }

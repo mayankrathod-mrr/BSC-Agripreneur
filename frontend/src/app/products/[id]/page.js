@@ -30,13 +30,13 @@ export default async function ProductDetailPage({ params }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Images Section */}
         <div>
-          <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
+          <h2 className="text-2xl font-bold mb-6 text-center text-white-800">
             Product Showcase
           </h2>
           <div className="flex flex-col sm:flex-row gap-6">
             {/* Main Image */}
             <div className="flex-1 text-center">
-              <h3 className="text-lg font-semibold mb-3 text-gray-700">
+              <h3 className="text-lg font-semibold mb-3 text-white-700">
                 Main Image
               </h3>
               <div className="relative w-full h-80 border rounded-xl overflow-hidden shadow-md">
@@ -54,7 +54,7 @@ export default async function ProductDetailPage({ params }) {
             {/* Result Image */}
             {product.afterImage && (
               <div className="flex-1 text-center">
-                <h3 className="text-lg font-semibold mb-3 text-gray-700">
+                <h3 className="text-lg font-semibold mb-3 text-white-700">
                   Result Image
                 </h3>
                 <div className="relative w-full h-80 border rounded-xl overflow-hidden shadow-md">

@@ -14,15 +14,28 @@ const getPublicIdFromUrl = (url) => {
     }
 };
 
+// @desc    Fetch all products (with optional category filter)
+// @route   GET /api/products
+// @access  Public
 const getProducts = async (req, res) => {
   try {
-    const products = await Product.find({}).sort({ createdAt: -1 });
+    // Check if a 'category' was sent in the URL query
+    const categoryFilter = req.query.category ? { category: req.query.category } : {};
+
+    // Use the filter in the database search.
+    // If the filter is empty, it finds all products.
+    const products = await Product.find({ ...categoryFilter }).sort({ createdAt: -1 });
+    
     res.json(products);
   } catch (error) {
+    console.error('Backend Error in getProducts:', error);
     res.status(500).json({ message: 'Server Error' });
   }
 };
 
+// @desc    Fetch single product by ID
+// @route   GET /api/products/:id
+// @access  Public
 const getProductById = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -32,42 +45,60 @@ const getProductById = async (req, res) => {
       res.status(404).json({ message: 'Product not found' });
     }
   } catch (error) {
+    console.error('Backend Error in getProductById:', error);
     res.status(500).json({ message: 'Server Error' });
   }
 };
 
+// @desc    Create a product
+// @route   POST /api/products
+// @access  Private/Admin
 const createProduct = async (req, res) => {
   try {
     const { name, category, description, quantity, price } = req.body;
+    
     if (!req.files || !req.files.mainImage) {
         return res.status(400).json({ message: 'Please upload the main product image.' });
     }
+    
     const productData = {
-        name, category, description, quantity, price,
+        name,
+        category,
+        description,
+        quantity,
+        price,
         mainImage: req.files.mainImage[0].path,
         uploadedBy: req.user._id,
     };
+
     if (req.files.afterImage) {
       productData.afterImage = req.files.afterImage[0].path;
     }
+    
     const product = new Product(productData);
     const createdProduct = await product.save();
     res.status(201).json(createdProduct);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: 'Server Error' });
   }
 };
 
+// @desc    Update a product
+// @route   PUT /api/products/:id
+// @access  Private/Admin
 const updateProduct = async (req, res) => {
   try {
     const { name, price, description, quantity, category } = req.body;
     const product = await Product.findById(req.params.id);
+
     if (product) {
       product.name = name || product.name;
       product.price = price || product.price;
       product.description = description || product.description;
       product.quantity = quantity || product.quantity;
       product.category = category || product.category;
+
       if (req.files) {
         if (req.files.mainImage) {
           const oldPublicId = getPublicIdFromUrl(product.mainImage);
@@ -82,19 +113,25 @@ const updateProduct = async (req, res) => {
           product.afterImage = req.files.afterImage[0].path;
         }
       }
+
       const updatedProduct = await product.save();
       res.json(updatedProduct);
     } else {
       res.status(404).json({ message: 'Product not found' });
     }
   } catch (error) {
+    console.error('Update Product Error:', error);
     res.status(500).json({ message: 'Server Error' });
   }
 };
 
+// @desc    Delete a product
+// @route   DELETE /api/products/:id
+// @access  Private/Admin
 const deleteProduct = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
+
     if (product) {
       if (product.mainImage) {
         const publicId = getPublicIdFromUrl(product.mainImage);
@@ -104,12 +141,14 @@ const deleteProduct = async (req, res) => {
         const publicId = getPublicIdFromUrl(product.afterImage);
         if (publicId) await cloudinary.uploader.destroy(publicId);
       }
+
       await Product.deleteOne({ _id: req.params.id });
       res.json({ message: 'Product removed' });
     } else {
       res.status(404).json({ message: 'Product not found' });
     }
   } catch (error) {
+    console.error('Delete Product Error:', error);
     res.status(500).json({ message: 'Server Error' });
   }
 };
@@ -121,3 +160,4 @@ export {
   updateProduct,
   deleteProduct,
 };
+

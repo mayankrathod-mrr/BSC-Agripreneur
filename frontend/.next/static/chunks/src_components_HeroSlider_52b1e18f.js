@@ -39,7 +39,7 @@ const HeroSlider = ()=>{
         {
             id: 2,
             image: "/slide2.jpg",
-            text: "🌾 Advanced Fertilizers for Healthy Growth"
+            text: "🌾 Advanced Pesticides for Healthy Growth"
         },
         {
             id: 3,
