@@ -109,37 +109,39 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ProductCard$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ProductCard.js [app-rsc] (ecmascript)");
 ;
 ;
-// This function fetches products based on a category
+// 🔹 Fetch products from the backend API
 async function getProducts(category) {
     try {
-        // If a category is provided, add it to the API URL as a query parameter
+        // Build the API URL with optional category filter
         const url = category ? `http://localhost:5000/api/products?category=${category}` : 'http://localhost:5000/api/products';
         const res = await fetch(url, {
             cache: 'no-store'
-        });
-        if (!res.ok) return [];
+        }); // Always fetch fresh data
+        if (!res.ok) {
+            console.error("API response was not ok:", res.status, res.statusText);
+            return [];
+        }
         return res.json();
     } catch (error) {
-        console.error('Error fetching products:', error);
-        return [];
+        console.error("Error fetching products:", error);
+        return []; // Fallback: return empty array on error
     }
 }
 async function ProductsPage({ searchParams }) {
-    // === THIS IS THE FINAL, GUARANTEED FIX ===
-    // In new Next.js, you must 'await' the searchParams before using them.
+    // ✅ Fix for Next.js: Await searchParams before using
     const awaitedParams = await searchParams;
-    const category = awaitedParams.category || '';
-    // ==========================================
+    const category = awaitedParams?.category || '';
+    // Fetch products based on category
     const products = await getProducts(category);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "container mx-auto px-4 sm:px-6 lg:px-8 py-12",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                 className: "text-3xl font-bold text-center mb-8 capitalize",
-                children: category ? `${category}` : 'All Products'
+                children: category ? category : "All Products"
             }, void 0, false, {
                 fileName: "[project]/src/app/products/page.js",
-                lineNumber: 35,
+                lineNumber: 37,
                 columnNumber: 7
             }, this),
             products.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -147,7 +149,7 @@ async function ProductsPage({ searchParams }) {
                 children: "No products found for this category."
             }, void 0, false, {
                 fileName: "[project]/src/app/products/page.js",
-                lineNumber: 41,
+                lineNumber: 43,
                 columnNumber: 9
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8",
@@ -155,18 +157,18 @@ async function ProductsPage({ searchParams }) {
                         product: product
                     }, product._id, false, {
                         fileName: "[project]/src/app/products/page.js",
-                        lineNumber: 45,
+                        lineNumber: 49,
                         columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/products/page.js",
-                lineNumber: 43,
+                lineNumber: 47,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/products/page.js",
-        lineNumber: 34,
+        lineNumber: 35,
         columnNumber: 5
     }, this);
 }
