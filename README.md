@@ -1,115 +1,108 @@
-# 🌱 Agri Store - Full-Stack E-commerce Platform
+🌱 BSC Agripreneur – Full-Stack E-commerce Platform
 
-Welcome to **Agri Store**, a complete e-commerce web application built for agricultural products.  
-This project demonstrates a **full-stack MERN application** (MongoDB, Express.js, React/Next.js, Node.js) with essential e-commerce features such as authentication, product catalogs, shopping cart, and order management.
+Welcome to BSC Agripreneur, a complete e-commerce web application built for agricultural products.
+This project demonstrates a full-stack MERN application (MongoDB, Express.js, React/Next.js, Node.js) with features designed for a real-world user experience.
 
----
+🚀 Live Demo: [Add your deployed link here]
 
-## 🔗 Live Demo  
-[👉 Click Here to View Demo](#) *(Link to your deployed website will go here)*  
+✨ Key Features
 
----
+🛒 Complete E-commerce Flow – Browse products, add to cart, checkout, and view order history.
 
-## 📸 Screenshots  
-- **Homepage**  
-- **Products Page**  
-- **Cart Page**  
-- **Order History**  
+🛠 Admin Dashboard – Secure role-protected area for admins to add new products with real image uploads.
 
----
+🌍 Multi-Language Support – English, Hindi (हिन्दी), and Marathi (मराठी).
 
-## ✨ Key Features
-✅ **User Authentication** – Secure login & signup with JWT  
-✅ **Product Catalog** – Categories: Seeds, Fertilizers, Pesticides  
-✅ **Dynamic Product Pages** – Detailed info for each product  
-✅ **Shopping Cart** – Add, view, and remove items (per user)  
-✅ **Order System** – Checkout converts cart into permanent orders  
-✅ **Order History** – View past orders with status tracking  
-✅ **Responsive UI** – Built with Tailwind CSS for all devices  
-✅ **Engaging Homepage** – Dynamic image slider + featured products  
+🔐 Secure Authentication – JWT-based login & registration with bcrypt password encryption.
 
----
+☁️ Cloud Image Hosting – Product images uploaded & served via Cloudinary.
 
-## 🛠️ Tech Stack  
+📱 Responsive Design – Mobile-first UI built with Tailwind CSS.
 
-### ⚡ Frontend
-- **Next.js** – React framework  
-- **React** – UI library  
-- **Tailwind CSS** – Utility-first CSS  
-- **React Slick** – Homepage carousel  
-- **Axios / Fetch API** – API requests  
+🏷 Category Filtering – Quickly filter products by Seeds, Fertilizers, and Pesticides.
 
-### ⚡ Backend
-- **Node.js** – Runtime environment  
-- **Express.js** – Web framework  
-- **MongoDB** – NoSQL database  
-- **Mongoose** – ODM for MongoDB  
+🛠 Tech Stack
 
-### 🔐 Authentication & Security
-- **JWT** – Secure user sessions  
-- **bcrypt.js** – Password hashing  
+Frontend:
 
-### 🛠️ Tools
-- **Git & GitHub** – Version control  
-- **Postman** – API testing  
-- **VS Code** – Development environment  
+Next.js (App Router)
 
----
+React
 
-## 🚀 Getting Started  
+Tailwind CSS
 
-Follow these steps to run the project locally 👇  
+i18next (for translations)
 
-### ✅ Prerequisites  
-- [Node.js](https://nodejs.org/) and npm installed  
-- MongoDB connection string  
+React Icons
 
----
+Backend:
 
-### 🔧 Installation & Setup  
+Node.js & Express.js
 
-#### 1️⃣ Clone the Repository
-```bash
+MongoDB + Mongoose
+
+JWT & bcrypt.js (authentication & security)
+
+Image Hosting:
+
+Cloudinary
+
+🚀 Getting Started
+
+Follow these steps to set up the project locally.
+
+✅ Prerequisites
+
+Install Node.js
+ (with npm)
+
+📦 Installation & Setup
+
+1. Clone the repo
+
 git clone https://github.com/mayankrathod-mrr/BSC-Agripreneur.git
-cd agri-store
-2️⃣ Setup Backend
-bash
-Copy code
+cd BSC-Agripreneur
+
+
+2. Setup Backend
+
 cd backend
 npm install
-Create a .env file in the backend folder and add:
 
-env
-Copy code
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
+
+Create a .env file in /backend and add:
+
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_jwt_secret
+CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_cloudinary_key
+CLOUDINARY_API_SECRET=your_cloudinary_secret
 PORT=5000
-3️⃣ Setup Frontend
-bash
-Copy code
+
+
+3. Setup Frontend
+
 cd ../frontend
 npm install
-▶️ Run the Application
-Backend Server
 
-bash
-Copy code
+
+4. Run the application
+Start the backend:
+
 cd backend
 npm run dev
-Frontend Server
 
-bash
-Copy code
+
+Start the frontend (in a new terminal):
+
 cd frontend
 npm run dev
-✅ The app will now run at:
 
-Frontend → http://localhost:3000
 
-Backend → http://localhost:5000
+Now open 👉 http://localhost:3000
 
-👤 Author - Mayank Rathod
-🔗 GitHub: @mayankrathod-mrr
+👤 Author
 
-🌟 If you like this project, don’t forget to star the repo!
+Mayank Rathod
 
+GitHub: @mayankrathod-mrr

@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🌱 Agri Store – Frontend
 
-## Getting Started
+This directory contains the frontend application for the BSC Agripreneur E-commerce Platform, built with Next.js and Tailwind CSS.
 
-First, run the development server:
+The frontend provides a modern, responsive UI for browsing products, managing the cart, checkout, and an admin dashboard for managing the store.
 
-```bash
+✨ Features
+
+⚡ Dynamic Routing – Next.js App Router with server-rendered pages & dynamic routes.
+
+🧩 Component-Based Architecture – Reusable React components for clean and maintainable code.
+
+🌍 Global State Management – React Context API for managing authentication state.
+
+🌐 Multi-Language Support – i18next integration for English, हिंदी, and मराठी.
+
+📱 Responsive Design – Mobile-first with Tailwind CSS for seamless UX across devices.
+
+🔐 Admin Interface – Protected client-side form for admins to add new products with image uploads.
+
+🚀 Getting Started
+
+Follow these steps to run the frontend locally.
+
+📂 Navigate to Frontend
+cd frontend
+
+📦 Install Dependencies
+npm install
+
+▶️ Run the Development Server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The frontend will be running at 👉 http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⚠️ Note: Make sure the backend server is also running (default: http://localhost:5000
+) for full functionality
