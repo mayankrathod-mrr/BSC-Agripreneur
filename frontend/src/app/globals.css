@@ -24,3 +24,10 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Star Rating Horizontal Fix */
+/* This is a special rule to override the star library's styles */
+/* and force the stars to display in a line. */
+.react-simple-star-rating {
+  display: flex !important;
+}

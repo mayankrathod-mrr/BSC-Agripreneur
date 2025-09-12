@@ -117,26 +117,54 @@ __turbopack_context__.s([
     ()=>StarRating
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$star$2d$rating$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-simple-star-rating/dist/index.js [app-client] (ecmascript)");
 "use client";
 ;
-;
+// This is our own custom Star component. It uses SVG and Tailwind CSS.
+const Star = (param)=>{
+    let { filled } = param;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        className: "w-5 h-5 ".concat(filled ? 'text-amber-500' : 'text-gray-300'),
+        fill: "currentColor",
+        viewBox: "0 0 20 20",
+        xmlns: "http://www.w3.org/2000/svg",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+            d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+        }, void 0, false, {
+            fileName: "[project]/src/components/StarRating.js",
+            lineNumber: 11,
+            columnNumber: 9
+        }, ("TURBOPACK compile-time value", void 0))
+    }, void 0, false, {
+        fileName: "[project]/src/components/StarRating.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, ("TURBOPACK compile-time value", void 0));
+};
+_c = Star;
 function StarRating(param) {
-    let { rating, numReviews } = param;
-    // The main container uses flexbox to align items horizontally
+    let { rating = 0, numReviews = 0 } = param;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex items-center space-x-2",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$star$2d$rating$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Rating"], {
-                initialValue: rating,
-                readonly: true,
-                size: 20,
-                fillColor: "#f59e0b",
-                emptyColor: "#d1d5db",
-                allowFraction: true
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex items-center",
+                children: [
+                    ...Array(5)
+                ].map((_, index)=>{
+                    const starValue = index + 1;
+                    // Fills the star if the rating is higher than its value
+                    const filled = rating >= starValue;
+                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Star, {
+                        filled: filled
+                    }, index, false, {
+                        fileName: "[project]/src/components/StarRating.js",
+                        lineNumber: 23,
+                        columnNumber: 28
+                    }, this);
+                })
             }, void 0, false, {
                 fileName: "[project]/src/components/StarRating.js",
-                lineNumber: 8,
+                lineNumber: 18,
                 columnNumber: 13
             }, this),
             numReviews > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -150,19 +178,20 @@ function StarRating(param) {
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/StarRating.js",
-                lineNumber: 18,
+                lineNumber: 27,
                 columnNumber: 18
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/StarRating.js",
-        lineNumber: 7,
+        lineNumber: 17,
         columnNumber: 9
     }, this);
 }
-_c = StarRating;
-var _c;
-__turbopack_context__.k.register(_c, "StarRating");
+_c1 = StarRating;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "Star");
+__turbopack_context__.k.register(_c1, "StarRating");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -175,11 +204,12 @@ __turbopack_context__.s([
     ()=>ProductReviews
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"); // <-- Import useEffect
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$AuthContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/context/AuthContext.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$star$2d$rating$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-simple-star-rating/dist/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+// We use our OWN component to DISPLAY stars horizontally
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$StarRating$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/StarRating.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
@@ -188,28 +218,59 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+// A simple star icon for our new rating input
+const StarIcon = (param)=>{
+    let { filled, onClick } = param;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+        type: "button",
+        onClick: onClick,
+        className: "focus:outline-none p-0.5",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            className: "w-7 h-7 ".concat(filled ? 'text-amber-500' : 'text-gray-300', " hover:text-amber-400 transition-colors"),
+            fill: "currentColor",
+            viewBox: "0 0 20 20",
+            xmlns: "http://www.w3.org/2000/svg",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+            }, void 0, false, {
+                fileName: "[project]/src/components/ProductReviews.js",
+                lineNumber: 19,
+                columnNumber: 13
+            }, ("TURBOPACK compile-time value", void 0))
+        }, void 0, false, {
+            fileName: "[project]/src/components/ProductReviews.js",
+            lineNumber: 13,
+            columnNumber: 9
+        }, ("TURBOPACK compile-time value", void 0))
+    }, void 0, false, {
+        fileName: "[project]/src/components/ProductReviews.js",
+        lineNumber: 12,
+        columnNumber: 5
+    }, ("TURBOPACK compile-time value", void 0));
+};
+_c = StarIcon;
 function ProductReviews(param) {
     let { product } = param;
     _s();
     const { user } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$AuthContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuth"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
-    const [rating, setRating] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [rating, setRating] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0); // State for the new review's rating
     const [comment, setComment] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [message, setMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    // === THIS IS THE GUARANTEED FIX FOR THE DATE HYDRATION ERROR ===
+    // This is for the date hydration fix
     const [isMounted, setIsMounted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "ProductReviews.useEffect": ()=>{
             setIsMounted(true);
         }
     }["ProductReviews.useEffect"], []);
-    // =============================================================
-    const handleRating = (rate)=>{
-        setRating(rate);
-    };
     const submitHandler = async (e)=>{
         e.preventDefault();
+        if (rating === 0) {
+            setMessage('Please select a star rating.');
+            return;
+        }
         setMessage('');
         setLoading(true);
         try {
@@ -225,13 +286,11 @@ function ProductReviews(param) {
                 })
             });
             const data = await res.json();
-            if (!res.ok) {
-                throw new Error(data.message || 'Failed to submit review');
-            }
+            if (!res.ok) throw new Error(data.message || 'Failed to submit review');
             setRating(0);
             setComment('');
             alert('Review submitted successfully!');
-            router.refresh();
+            router.refresh(); // Reloads the page to show the new review
         } catch (error) {
             setMessage(error.message);
         } finally{
@@ -246,7 +305,7 @@ function ProductReviews(param) {
                 children: "Reviews"
             }, void 0, false, {
                 fileName: "[project]/src/components/ProductReviews.js",
-                lineNumber: 61,
+                lineNumber: 72,
                 columnNumber: 13
             }, this),
             product.reviews.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -254,7 +313,7 @@ function ProductReviews(param) {
                 children: "No reviews yet."
             }, void 0, false, {
                 fileName: "[project]/src/components/ProductReviews.js",
-                lineNumber: 62,
+                lineNumber: 73,
                 columnNumber: 46
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -270,23 +329,20 @@ function ProductReviews(param) {
                                         children: review.name
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProductReviews.js",
-                                        lineNumber: 68,
+                                        lineNumber: 79,
                                         columnNumber: 29
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$star$2d$rating$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Rating"], {
-                                        initialValue: review.rating,
-                                        readonly: true,
-                                        size: 16,
-                                        fillColor: "#f59e0b"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$StarRating$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        rating: review.rating
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProductReviews.js",
-                                        lineNumber: 69,
+                                        lineNumber: 81,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProductReviews.js",
-                                lineNumber: 67,
+                                lineNumber: 78,
                                 columnNumber: 25
                             }, this),
                             isMounted && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -294,25 +350,25 @@ function ProductReviews(param) {
                                 children: new Date(review.createdAt).toLocaleDateString()
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProductReviews.js",
-                                lineNumber: 74,
-                                columnNumber: 29
+                                lineNumber: 84,
+                                columnNumber: 30
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: review.comment
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProductReviews.js",
-                                lineNumber: 79,
+                                lineNumber: 86,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, review._id, true, {
                         fileName: "[project]/src/components/ProductReviews.js",
-                        lineNumber: 66,
+                        lineNumber: 77,
                         columnNumber: 21
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/ProductReviews.js",
-                lineNumber: 64,
+                lineNumber: 75,
                 columnNumber: 13
             }, this),
             user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -324,7 +380,7 @@ function ProductReviews(param) {
                         children: "Write a Customer Review"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ProductReviews.js",
-                        lineNumber: 86,
+                        lineNumber: 93,
                         columnNumber: 21
                     }, this),
                     message && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -332,7 +388,7 @@ function ProductReviews(param) {
                         children: message
                     }, void 0, false, {
                         fileName: "[project]/src/components/ProductReviews.js",
-                        lineNumber: 87,
+                        lineNumber: 94,
                         columnNumber: 33
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -343,22 +399,33 @@ function ProductReviews(param) {
                                 children: "Your Rating"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProductReviews.js",
-                                lineNumber: 89,
+                                lineNumber: 98,
                                 columnNumber: 25
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$star$2d$rating$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Rating"], {
-                                onClick: handleRating,
-                                initialValue: rating,
-                                size: 28
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center",
+                                children: [
+                                    ...Array(5)
+                                ].map((_, index)=>{
+                                    const starValue = index + 1;
+                                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StarIcon, {
+                                        filled: starValue <= rating,
+                                        onClick: ()=>setRating(starValue)
+                                    }, index, false, {
+                                        fileName: "[project]/src/components/ProductReviews.js",
+                                        lineNumber: 103,
+                                        columnNumber: 37
+                                    }, this);
+                                })
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProductReviews.js",
-                                lineNumber: 90,
+                                lineNumber: 99,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProductReviews.js",
-                        lineNumber: 88,
+                        lineNumber: 97,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -370,7 +437,7 @@ function ProductReviews(param) {
                                 children: "Your Comment"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProductReviews.js",
-                                lineNumber: 93,
+                                lineNumber: 115,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -382,13 +449,13 @@ function ProductReviews(param) {
                                 className: "w-full p-2 border rounded-md"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProductReviews.js",
-                                lineNumber: 94,
+                                lineNumber: 116,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProductReviews.js",
-                        lineNumber: 92,
+                        lineNumber: 114,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -398,13 +465,13 @@ function ProductReviews(param) {
                         children: loading ? 'Submitting...' : 'Submit Review'
                     }, void 0, false, {
                         fileName: "[project]/src/components/ProductReviews.js",
-                        lineNumber: 103,
+                        lineNumber: 125,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ProductReviews.js",
-                lineNumber: 85,
+                lineNumber: 92,
                 columnNumber: 17
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 className: "p-4 border rounded-md bg-gray-100 text-center",
@@ -416,20 +483,20 @@ function ProductReviews(param) {
                         children: "log in"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ProductReviews.js",
-                        lineNumber: 108,
+                        lineNumber: 130,
                         columnNumber: 85
                     }, this),
                     " to write a review."
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ProductReviews.js",
-                lineNumber: 108,
+                lineNumber: 130,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ProductReviews.js",
-        lineNumber: 60,
+        lineNumber: 71,
         columnNumber: 9
     }, this);
 }
@@ -439,9 +506,10 @@ _s(ProductReviews, "ctMYu3bCAdm0cOUHLF4N+YclhQQ=", false, function() {
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];
 });
-_c = ProductReviews;
-var _c;
-__turbopack_context__.k.register(_c, "ProductReviews");
+_c1 = ProductReviews;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "StarIcon");
+__turbopack_context__.k.register(_c1, "ProductReviews");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

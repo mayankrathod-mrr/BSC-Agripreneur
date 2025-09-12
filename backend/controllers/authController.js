@@ -1,14 +1,16 @@
-// backend/controllers/authController.js
-
-import User from '../models/User.js'; // Using import
+import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
 
+const generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
+};
+
 const registerUser = async (req, res) => {
-  const { name, email, password } = req.body;
+  // Add 'phone' here
+  const { name, email, password, phone } = req.body; 
 
   try {
     const userExists = await User.findOne({ email });
-
     if (userExists) {
       return res.status(400).json({ message: 'User already exists' });
     }
@@ -17,6 +19,7 @@ const registerUser = async (req, res) => {
       name,
       email,
       password,
+      phone, // Save the phone number
     });
 
     if (user) {
@@ -24,6 +27,7 @@ const registerUser = async (req, res) => {
         _id: user._id,
         name: user.name,
         email: user.email,
+        phone: user.phone, // Send phone back
         role: user.role,
         token: generateToken(user._id),
       });
@@ -37,15 +41,14 @@ const registerUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
-
   try {
     const user = await User.findOne({ email });
-
     if (user && (await user.matchPassword(password))) {
       res.json({
         _id: user._id,
         name: user.name,
         email: user.email,
+        phone: user.phone, // Send phone back on login too
         role: user.role,
         token: generateToken(user._id),
       });
@@ -57,10 +60,4 @@ const loginUser = async (req, res) => {
   }
 };
 
-const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: '30d',
-  });
-};
-
-export { registerUser, loginUser }; // Using export
+export { registerUser, loginUser };
