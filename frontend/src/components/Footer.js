@@ -41,7 +41,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-amber-300 mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm text-green-100/90">
-              <li>121 Near MM college , Darwha</li>
+              <li>121 Near MM college , Darwha. pncode - 445202</li>
               <li>
                 <a href="mailto:contact@bscagri.com" className="hover:text-amber-400 transition-colors">
                   contact@bscagri.com
@@ -49,7 +49,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="tel:+919876543210" className="hover:text-amber-400 transition-colors">
-                  +91 98765 43210
+                  +91 9096090143
                 </a>
               </li>
             </ul>
@@ -61,7 +61,7 @@ const Footer = () => {
             <div className="flex space-x-5">
               <a href="#" className="hover:text-amber-400 transition-colors"><FaFacebook size={22} /></a>
               <a href="#" className="hover:text-amber-400 transition-colors"><FaTwitter size={22} /></a>
-              <a href="#" className="hover:text-amber-400 transition-colors"><FaInstagram size={22} /></a>
+              <a href="https://www.instagram.com/bsc.agripreneur?utm_source=ig_web_button_share_sheet&igsh=MXR4cWM2azJjdmRxNg==" className="hover:text-amber-400 transition-colors"><FaInstagram size={22} /></a>
             </div>
           </div>
         </div>

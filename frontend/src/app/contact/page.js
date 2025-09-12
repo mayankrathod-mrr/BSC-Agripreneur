@@ -43,7 +43,7 @@ export default function ContactPage() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-800">Our Office</h3>
                 <p className="text-gray-600">
-                  123 Agri Street, Farmville, India 12345
+                   Near MM college, Darwha . pincode - 445202
                 </p>
               </div>
               <div>
@@ -60,7 +60,7 @@ export default function ContactPage() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-800">Call Us</h3>
                 <p className="text-gray-600 hover:text-green-600 transition">
-                  +91 98765 43210
+                  +91 9096090143
                 </p>
               </div>
             </div>

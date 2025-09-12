@@ -1,7 +1,7 @@
 import Product from '../models/Product.js';
 import { v2 as cloudinary } from 'cloudinary';
 
-// Helper function to get the public ID from a full Cloudinary URL
+// Helper function to extract the public_id from a Cloudinary URL
 const getPublicIdFromUrl = (url) => {
     try {
         if (!url || !url.includes('cloudinary')) return null;
@@ -14,18 +14,27 @@ const getPublicIdFromUrl = (url) => {
     }
 };
 
-// @desc    Fetch all products (with optional category filter)
+// @desc    Fetch all products (with optional category and keyword filters)
 // @route   GET /api/products
 // @access  Public
 const getProducts = async (req, res) => {
   try {
-    // Check if a 'category' was sent in the URL query
-    const categoryFilter = req.query.category ? { category: req.query.category } : {};
+    const { category, keyword } = req.query;
+    const filter = {};
 
-    // Use the filter in the database search.
-    // If the filter is empty, it finds all products.
-    const products = await Product.find({ ...categoryFilter }).sort({ createdAt: -1 });
-    
+    if (category) {
+      filter.category = category;
+    }
+
+    if (keyword) {
+      // This will search for the keyword in the product's name, case-insensitive
+      filter.name = {
+        $regex: keyword,
+        $options: 'i',
+      };
+    }
+
+    const products = await Product.find({ ...filter }).sort({ createdAt: -1 });
     res.json(products);
   } catch (error) {
     console.error('Backend Error in getProducts:', error);
@@ -45,7 +54,6 @@ const getProductById = async (req, res) => {
       res.status(404).json({ message: 'Product not found' });
     }
   } catch (error) {
-    console.error('Backend Error in getProductById:', error);
     res.status(500).json({ message: 'Server Error' });
   }
 };
@@ -79,7 +87,7 @@ const createProduct = async (req, res) => {
     const createdProduct = await product.save();
     res.status(201).json(createdProduct);
   } catch (error) {
-    console.error(error);
+    console.error("Create Product Error:", error);
     res.status(500).json({ message: 'Server Error' });
   }
 };

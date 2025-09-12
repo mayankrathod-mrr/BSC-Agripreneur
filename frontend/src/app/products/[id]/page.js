@@ -73,7 +73,7 @@ export default async function ProductDetailPage({ params }) {
 
         {/* Details Section */}
         <div className="space-y-5">
-          <h1 className="text-4xl font-bold text-gray-900">{product.name}</h1>
+          <h1 className="text-4xl font-bold text-white-900">{product.name}</h1>
 
           <span className="inline-block text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full capitalize shadow-sm">
             {product.category}

@@ -1,14 +1,18 @@
 import ProductCard from '@/components/ProductCard';
+import SearchBox from '@/components/SearchBox'; // 🔍 Search input component
 
-// 🔹 Fetch products from the backend API
-async function getProducts(category) {
+// 🔹 Fetch products by category and/or keyword
+async function getProducts(category, keyword) {
   try {
-    // Build the API URL with optional category filter
-    const url = category
-      ? `http://localhost:5000/api/products?category=${category}`
-      : 'http://localhost:5000/api/products';
+    const params = new URLSearchParams();
 
-    const res = await fetch(url, { cache: 'no-store' }); // Always fetch fresh data
+    if (category) params.append("category", category);
+    if (keyword) params.append("keyword", keyword);
+
+    const res = await fetch(
+      `http://localhost:5000/api/products?${params.toString()}`,
+      { cache: "no-store" } // Always fetch fresh data
+    );
 
     if (!res.ok) {
       console.error("API response was not ok:", res.status, res.statusText);
@@ -24,24 +28,30 @@ async function getProducts(category) {
 
 // 🔹 Products Page (Server Component)
 export default async function ProductsPage({ searchParams }) {
-  // ✅ Fix for Next.js: Await searchParams before using
+  // ✅ Await searchParams (required in new Next.js)
   const awaitedParams = await searchParams;
-  const category = awaitedParams?.category || '';
+  const category = awaitedParams?.category || "";
+  const keyword = awaitedParams?.keyword || "";
 
-  // Fetch products based on category
-  const products = await getProducts(category);
+  // Fetch products with filters
+  const products = await getProducts(category, keyword);
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Page Title */}
-      <h1 className="text-3xl font-bold text-center mb-8 capitalize">
+      <h1 className="text-3xl font-bold text-center mb-4 capitalize">
         {category ? category : "All Products"}
       </h1>
 
+      {/* 🔍 Search Box */}
+      <div className="max-w-md mx-auto mb-8">
+        <SearchBox />
+      </div>
+
       {/* Product Grid / Empty State */}
       {products.length === 0 ? (
-        <p className="text-center text-gray-500">
-          No products found for this category.
+        <p className="text-center text-white-500">
+          No products found {keyword && `for "${keyword}"`}.
         </p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
