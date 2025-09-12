@@ -1,7 +1,7 @@
 import Product from '../models/Product.js';
 import { v2 as cloudinary } from 'cloudinary';
 
-// Helper function to extract the public_id from a Cloudinary URL
+// Helper function to get the public ID from a full Cloudinary URL
 const getPublicIdFromUrl = (url) => {
     try {
         if (!url || !url.includes('cloudinary')) return null;
@@ -14,37 +14,24 @@ const getPublicIdFromUrl = (url) => {
     }
 };
 
-// @desc    Fetch all products (with optional category and keyword filters)
-// @route   GET /api/products
-// @access  Public
 const getProducts = async (req, res) => {
   try {
-    const { category, keyword } = req.query;
-    const filter = {};
-
-    if (category) {
-      filter.category = category;
-    }
-
-    if (keyword) {
-      // This will search for the keyword in the product's name, case-insensitive
-      filter.name = {
-        $regex: keyword,
-        $options: 'i',
-      };
-    }
-
-    const products = await Product.find({ ...filter }).sort({ createdAt: -1 });
+    const category = req.query.category ? { category: req.query.category } : {};
+    const keyword = req.query.keyword
+      ? {
+          name: {
+            $regex: req.query.keyword,
+            $options: 'i',
+          },
+        }
+      : {};
+    const products = await Product.find({ ...category, ...keyword }).sort({ createdAt: -1 });
     res.json(products);
   } catch (error) {
-    console.error('Backend Error in getProducts:', error);
     res.status(500).json({ message: 'Server Error' });
   }
 };
 
-// @desc    Fetch single product by ID
-// @route   GET /api/products/:id
-// @access  Public
 const getProductById = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -58,55 +45,38 @@ const getProductById = async (req, res) => {
   }
 };
 
-// @desc    Create a product
-// @route   POST /api/products
-// @access  Private/Admin
 const createProduct = async (req, res) => {
   try {
     const { name, category, description, quantity, price } = req.body;
-    
     if (!req.files || !req.files.mainImage) {
         return res.status(400).json({ message: 'Please upload the main product image.' });
     }
-    
     const productData = {
-        name,
-        category,
-        description,
-        quantity,
-        price,
+        name, category, description, quantity, price,
         mainImage: req.files.mainImage[0].path,
         uploadedBy: req.user._id,
     };
-
     if (req.files.afterImage) {
       productData.afterImage = req.files.afterImage[0].path;
     }
-    
     const product = new Product(productData);
     const createdProduct = await product.save();
     res.status(201).json(createdProduct);
   } catch (error) {
-    console.error("Create Product Error:", error);
     res.status(500).json({ message: 'Server Error' });
   }
 };
 
-// @desc    Update a product
-// @route   PUT /api/products/:id
-// @access  Private/Admin
 const updateProduct = async (req, res) => {
   try {
     const { name, price, description, quantity, category } = req.body;
     const product = await Product.findById(req.params.id);
-
     if (product) {
       product.name = name || product.name;
       product.price = price || product.price;
       product.description = description || product.description;
       product.quantity = quantity || product.quantity;
       product.category = category || product.category;
-
       if (req.files) {
         if (req.files.mainImage) {
           const oldPublicId = getPublicIdFromUrl(product.mainImage);
@@ -121,25 +91,19 @@ const updateProduct = async (req, res) => {
           product.afterImage = req.files.afterImage[0].path;
         }
       }
-
       const updatedProduct = await product.save();
       res.json(updatedProduct);
     } else {
       res.status(404).json({ message: 'Product not found' });
     }
   } catch (error) {
-    console.error('Update Product Error:', error);
     res.status(500).json({ message: 'Server Error' });
   }
 };
 
-// @desc    Delete a product
-// @route   DELETE /api/products/:id
-// @access  Private/Admin
 const deleteProduct = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
-
     if (product) {
       if (product.mainImage) {
         const publicId = getPublicIdFromUrl(product.mainImage);
@@ -149,14 +113,52 @@ const deleteProduct = async (req, res) => {
         const publicId = getPublicIdFromUrl(product.afterImage);
         if (publicId) await cloudinary.uploader.destroy(publicId);
       }
-
       await Product.deleteOne({ _id: req.params.id });
       res.json({ message: 'Product removed' });
     } else {
       res.status(404).json({ message: 'Product not found' });
     }
   } catch (error) {
-    console.error('Delete Product Error:', error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+};
+
+const createProductReview = async (req, res) => {
+  const { rating, comment } = req.body;
+  if (!rating || !comment) {
+    return res.status(400).json({ message: 'Please provide rating and comment' });
+  }
+  
+  try {
+    const product = await Product.findById(req.params.id);
+
+    if (product) {
+      const alreadyReviewed = product.reviews.find(
+        (r) => r.user.toString() === req.user._id.toString()
+      );
+
+      if (alreadyReviewed) {
+        return res.status(400).json({ message: 'You have already reviewed this product' });
+      }
+
+      const review = {
+        name: req.user.name,
+        rating: Number(rating),
+        comment,
+        user: req.user._id,
+      };
+
+      product.reviews.push(review);
+      product.numReviews = product.reviews.length;
+      product.rating = product.reviews.reduce((acc, item) => item.rating + acc, 0) / product.reviews.length;
+
+      await product.save();
+      res.status(201).json({ message: 'Review added successfully' });
+    } else {
+      res.status(404).json({ message: 'Product not found' });
+    }
+  } catch (error) {
+    console.error("Create Review Error:", error);
     res.status(500).json({ message: 'Server Error' });
   }
 };
@@ -167,5 +169,6 @@ export {
   createProduct,
   updateProduct,
   deleteProduct,
+  createProductReview,
 };
 

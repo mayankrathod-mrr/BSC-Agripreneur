@@ -41,7 +41,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-amber-300 mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm text-green-100/90">
-              <li>121 Near MM college , Darwha. pncode - 445202</li>
+              <li>Near MM college , Darwha. pncode - 445202</li>
               <li>
                 <a href="mailto:contact@bscagri.com" className="hover:text-amber-400 transition-colors">
                   contact@bscagri.com
